@@ -7,11 +7,8 @@ import { AppComponent } from './app.component';
 import { ListadoPuestosComponent } from './componentes/listado-puestos/listado-puestos.component';
 import { ToolbarComponent } from './basicos/toolbar/toolbar.component';
 
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatButtonModule} from "@angular/material/button";
-import {MatIconModule} from "@angular/material/icon";
-import {MatListModule} from "@angular/material/list";
 import {MatChipsModule} from "@angular/material/chips";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -23,11 +20,8 @@ import {MatChipsModule} from "@angular/material/chips";
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
-    MatListModule,
-    MatChipsModule
+    MatChipsModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
