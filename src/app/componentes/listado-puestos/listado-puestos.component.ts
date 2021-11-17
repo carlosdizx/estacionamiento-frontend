@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Puesto } from 'src/app/services/Puesto';
 import { PuestosService } from '../../services/puestos.service';
 
 @Component({
@@ -7,6 +8,8 @@ import { PuestosService } from '../../services/puestos.service';
   styleUrls: [],
 })
 export class ListadoPuestosComponent implements OnInit {
+  puestos: Puesto[] = [];
+
   constructor(private service: PuestosService) {}
 
   ngOnInit(): void {
@@ -14,8 +17,8 @@ export class ListadoPuestosComponent implements OnInit {
   }
 
   listarPuestos(): void {
-    this.service.listarPuestos().subscribe((puestos) => {
-      console.log(puestos);
-    });
+    this.service
+      .listarPuestos()
+      .subscribe((puestos) => (this.puestos = puestos));
   }
 }
