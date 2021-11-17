@@ -10,11 +10,11 @@ export class PuestosService {
 
   API: string = 'http://127.0.0.1:8000/api/puestos';
 
-  constructor(private http: HttpClient) {
+  puesto: Puesto = new Puesto();
 
-  }
+  constructor(private http: HttpClient) {}
 
-  listarPuestos():Observable<any>{
-    return this.http.get(this.API);
+  listarPuestos(): Observable<Puesto[]> {
+    return this.http.get<Puesto[]>(this.API);
   }
 }
