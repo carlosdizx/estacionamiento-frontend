@@ -13,27 +13,38 @@
                 {{ puesto.placa !== "1" ? "Ocupado" : "Libre" }}
               </mat-chip>
             </div>
-            <div class="card-footer">
-              <ul class="list-group list-group-numbered">
-                <li
-                  class="
-                    list-group-item
-                    d-flex
-                    justify-content-between
-                    align-items-start
-                  "
-                >
+            <div class="card-body">
+              <ul class="list-group">
+                <li class="d-flex justify-content-between align-items-start">
                   <div class="ms-2 me-auto">
                     <div class="fw-bold">
                       {{ puesto.placa !== "1" ? puesto.placa : "LIBRE**" }}
                     </div>
                     {{ puesto.placa !== "1" ? puesto.propietario : "LIBRE**" }}
                   </div>
-                  <span class="badge bg-success rounded-pill">
-                    {{ puesto.placa !== "1" ? puesto.inicio : "LIBRE**" }}
-                  </span>
+                  <h3>
+                    <span class="badge bg-success">
+                      {{ puesto.placa !== "1" ? puesto.inicio : "LIBRE**" }}
+                    </span>
+                  </h3>
                 </li>
               </ul>
+            </div>
+            <div class="card-body">
+              <button
+                *ngIf="puesto.placa === '1'"
+                mat-raised-button
+                color="primary"
+              >
+                Registrar carro
+              </button>
+              <button
+                *ngIf="puesto.placa !== '1'"
+                mat-raised-button
+                color="accent"
+              >
+                Sacar carro
+              </button>
             </div>
           </div>
         </div>
