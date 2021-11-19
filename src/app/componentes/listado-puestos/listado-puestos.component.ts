@@ -22,9 +22,7 @@ export class ListadoPuestosComponent implements OnInit {
       .subscribe((puestos) => (this.puestos = puestos));
   }
 
-  sacarCarro(): any {
-    let puesto = new Puesto();
-    puesto.placa = '1';
-    this.service.sacarCarro(puesto).subscribe();
+  actualizarPuesto(): any {
+    console.log("xd")
   }
 }

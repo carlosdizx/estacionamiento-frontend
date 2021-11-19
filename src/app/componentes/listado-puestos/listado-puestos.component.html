@@ -4,48 +4,48 @@
       <div class="row g-2">
         <div class="col-3" *ngFor="let puesto of puestos">
           <div class="card" style="width: 15rem">
-            <div class="card-body">
-              <h2 class="card-title">Puesto #{{ puesto.id }}</h2>
-              <mat-chip
-                selected
-                [color]="puesto.placa !== '1' ? 'accent' : 'primary'"
-              >
-                {{ puesto.placa !== "1" ? "Ocupado" : "Libre" }}
-              </mat-chip>
-            </div>
-            <div class="card-body">
-              <ul class="list-group">
-                <li class="d-flex justify-content-between align-items-start">
-                  <div class="ms-2 me-auto">
-                    <div class="fw-bold">
-                      {{ puesto.placa !== "1" ? puesto.placa : "LIBRE**" }}
+            <form (ngSubmit)="actualizarPuesto()">
+              <div class="card-body">
+                <h2 class="card-title">Puesto #{{ puesto.id }}</h2>
+                <mat-chip
+                  selected
+                  [color]="puesto.placa !== '1' ? 'accent' : 'primary'"
+                >
+                  {{ puesto.placa !== "1" ? "Ocupado" : "Libre" }}
+                </mat-chip>
+              </div>
+              <div class="card-body">
+                <ul class="list-group">
+                  <li class="d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">
+                        {{ puesto.placa !== "1" ? puesto.placa : "LIBRE**" }}
+                      </div>
+                      {{
+                        puesto.placa !== "1" ? puesto.propietario : "LIBRE**"
+                      }}
                     </div>
-                    {{ puesto.placa !== "1" ? puesto.propietario : "LIBRE**" }}
-                  </div>
-                  <h3>
-                    <span class="badge bg-success">
-                      {{ puesto.placa !== "1" ? puesto.inicio : "LIBRE**" }}
-                    </span>
-                  </h3>
-                </li>
-              </ul>
-            </div>
-            <div class="card-body">
-              <button
-                *ngIf="puesto.placa === '1'"
-                mat-raised-button
-                color="primary"
-              >
-                Registrar carro
-              </button>
-              <button
+                    <h3>
+                      <span class="badge bg-success">
+                        {{ puesto.placa !== "1" ? puesto.inicio : "LIBRE**" }}
+                      </span>
+                    </h3>
+                  </li>
+                </ul>
+              </div>
+              <input
+                type="submit"
                 *ngIf="puesto.placa !== '1'"
-                mat-raised-button
-                color="accent"
-              >
-                Sacar carro
-              </button>
-            </div>
+                class="btn btn-warning"
+                value="Sacar carro"
+              />
+              <input
+                type="submit"
+                *ngIf="puesto.placa === '1'"
+                class="btn btn-success"
+                value="Registrar carro"
+              />
+            </form>
           </div>
         </div>
       </div>
