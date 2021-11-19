@@ -1,6 +1,6 @@
 export class Puesto {
-  id: number = 0;
-  inicio: Date = new Date();
-  propietario: string = '';
-  placa: string = '';
+  id!: number;
+  inicio!: Date;
+  propietario!: string;
+  placa!: string;
 }

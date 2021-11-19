@@ -17,4 +17,8 @@ export class PuestosService {
   listarPuestos(): Observable<Puesto[]> {
     return this.http.get<Puesto[]>(this.API);
   }
+
+  sacarCarro(puesto: Puesto): Observable<Puesto> {
+    return this.http.put<Puesto>(this.API + `/${puesto.id}`, puesto);
+  }
 }
