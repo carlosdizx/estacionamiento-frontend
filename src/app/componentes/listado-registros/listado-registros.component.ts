@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { Registro } from 'src/app/services/Registro';
+import { RegistrosService } from '../../services/registros.service';
 
 @Component({
   selector: 'app-listado-registros',
@@ -8,9 +10,17 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class ListadoRegistrosComponent implements OnInit {
   columnas: string[] = ['id', 'placa', 'propietario', 'inicio', 'fin'];
-  filas = new MatTableDataSource([]);
+  filas: Registro[] = [];
 
-  constructor() {}
+  constructor(private service: RegistrosService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.listadoRegistros();
+  }
+
+  listadoRegistros(): void {
+    this.service
+      .listarRegistros()
+      .subscribe((registros) => (this.filas = registros));
+  }
 }
