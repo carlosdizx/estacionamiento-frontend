@@ -1,6 +1,6 @@
 export class Puesto {
   id!: number;
-  inicio!: Date;
+  inicio!: any;
   propietario!: string;
   placa!: string;
 }
