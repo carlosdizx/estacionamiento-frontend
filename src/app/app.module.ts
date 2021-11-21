@@ -12,9 +12,10 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { EditarPuestoComponent } from './componentes/editar-puesto/editar-puesto.component';
 
 @NgModule({
-  declarations: [AppComponent, ListadoPuestosComponent, ToolbarComponent],
+  declarations: [AppComponent, ListadoPuestosComponent, ToolbarComponent, EditarPuestoComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
