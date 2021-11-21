@@ -28,7 +28,6 @@ export class ListadoPuestosComponent implements OnInit {
       puesto.placa = '1';
       this.service.actualizarPuesto(puesto).subscribe();
     } else {
-      console.log('Registrando');
       await this.router.navigateByUrl(`/puestos/${puesto.id}`);
     }
   }

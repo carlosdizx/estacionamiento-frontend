@@ -17,4 +17,8 @@ export class PuestosService {
   actualizarPuesto(puesto: Puesto): Observable<Puesto> {
     return this.http.put<Puesto>(this.API + `/${puesto.id}`, puesto);
   }
+
+  encontrarPuesto(id: number): Observable<Puesto> {
+    return this.http.get<Puesto>(this.API + `/${id}`);
+  }
 }
