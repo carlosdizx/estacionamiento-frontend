@@ -16,6 +16,7 @@ import { EditarPuestoComponent } from './componentes/editar-puesto/editar-puesto
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ListadoRegistrosComponent } from './componentes/listado-registros/listado-registros.component';
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { ListadoRegistrosComponent } from './componentes/listado-registros/lista
     HttpClientModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
