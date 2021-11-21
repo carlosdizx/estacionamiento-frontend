@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PuestosService } from '../../services/puestos.service';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Puesto } from '../../services/Puesto';
-import { FormGroup, FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-editar-puesto',
@@ -47,9 +46,13 @@ export class EditarPuestoComponent implements OnInit {
     }
     const actual = new Date();
     this.puesto.inicio =
-      actual.toISOString().toString().split('T05')[0] +
-      ' ' +
-      actual.toLocaleTimeString().toString().split(' ')[0];
+      actual.getFullYear() +
+      '-' +
+      (actual.getMonth() + 1) +
+      '-' +
+      actual.getDate() +
+      '-' +
+      actual.toLocaleTimeString().split(' ')[0];
     this.puesto.placa = placa;
     this.puesto.propietario = propietario;
     this.service.actualizarPuesto(this.puesto).subscribe((puesto) => {
