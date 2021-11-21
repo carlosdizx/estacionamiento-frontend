@@ -10,6 +10,7 @@ import { Puesto } from '../../services/Puesto';
 })
 export class EditarPuestoComponent implements OnInit {
   puesto: Puesto = new Puesto();
+  edicion: boolean = false;
 
   constructor(
     private service: PuestosService,
@@ -18,8 +19,14 @@ export class EditarPuestoComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.rutaActiva.snapshot.params['id'];
-    this.service
-      .encontrarPuesto(id)
-      .subscribe((puesto) => (this.puesto = puesto));
+    this.service.encontrarPuesto(id).subscribe((puesto) => {
+      this.puesto = puesto;
+      this.edicion = true;
+    });
+  }
+
+  habilitarEdicion(): boolean {
+    console.log(this.puesto.placa);
+    return this.puesto.placa === '1';
   }
 }
