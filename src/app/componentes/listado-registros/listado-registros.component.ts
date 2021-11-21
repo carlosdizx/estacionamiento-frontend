@@ -9,7 +9,7 @@ import { RegistrosService } from '../../services/registros.service';
   styleUrls: [],
 })
 export class ListadoRegistrosComponent implements OnInit {
-  columnas: string[] = ['id', 'placa', 'propietario', 'inicio', 'fin'];
+  columnas: string[] = ['_id', 'placa', 'propietario', 'inicio', 'fin'];
   filas: Registro[] = [];
 
   constructor(private service: RegistrosService) {}
