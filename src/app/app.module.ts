@@ -17,6 +17,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ListadoRegistrosComponent } from './componentes/listado-registros/listado-registros.component';
 import {MatTableModule} from "@angular/material/table";
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import {MatTableModule} from "@angular/material/table";
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
