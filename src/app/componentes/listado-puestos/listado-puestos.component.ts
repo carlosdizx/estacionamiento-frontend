@@ -24,6 +24,10 @@ export class ListadoPuestosComponent implements OnInit {
 
   actualizarPuesto(puesto: Puesto): any {
     if (puesto.placa !== '1') {
+      puesto.placa = '1';
+      this.service.actualizarPuesto(puesto).subscribe((puesto) => {
+        console.log(`Puesto actualizado: ${puesto}`);
+      });
       console.log('Sacando');
     } else {
       console.log('Registrando');
