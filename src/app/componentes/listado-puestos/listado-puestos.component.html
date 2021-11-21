@@ -4,7 +4,7 @@
       <div class="row g-2">
         <div class="col-3" *ngFor="let puesto of puestos">
           <div class="card" style="width: 15rem">
-            <form (ngSubmit)="actualizarPuesto()">
+            <form (ngSubmit)="actualizarPuesto(puesto)">
               <div class="card-body">
                 <h2 class="card-title">Puesto #{{ puesto.id }}</h2>
                 <mat-chip

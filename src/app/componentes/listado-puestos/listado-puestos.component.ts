@@ -22,7 +22,11 @@ export class ListadoPuestosComponent implements OnInit {
       .subscribe((puestos) => (this.puestos = puestos));
   }
 
-  actualizarPuesto(): any {
-    console.log("xd")
+  actualizarPuesto(puesto: Puesto): any {
+    if (puesto.placa !== '1') {
+      console.log('Sacando');
+    } else {
+      console.log('Registrando');
+    }
   }
 }
