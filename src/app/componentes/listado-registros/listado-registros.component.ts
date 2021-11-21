@@ -6,18 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: [],
 })
 export class ListadoRegistrosComponent implements OnInit {
-  columnas: string[] = ['position', 'name', 'weight', 'symbol'];
+  columnas: string[] = ['id', 'placa', 'propietario', 'inicio', 'fin'];
   filas = [
-    { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
-    { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
-    { position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' },
-    { position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be' },
-    { position: 5, name: 'Boron', weight: 10.811, symbol: 'B' },
-    { position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C' },
-    { position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N' },
-    { position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O' },
-    { position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F' },
-    { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' },
+    { id: 1, placa: 'Hydrogen', propietario: 1.0079, inicio: 'H', fin: 'H' },
+    { id: 2, placa: 'Helium', propietario: 4.0026, inicio: 'He', fin: 'H' },
+    { id: 3, placa: 'Lithium', propietario: 6.941, inicio: 'Li', fin: 'H' },
+    { id: 4, placa: 'Beryllium', propietario: 9.0122, inicio: 'Be', fin: 'H' },
+    { id: 5, placa: 'Boron', propietario: 10.811, inicio: 'B', fin: 'H' },
+    { id: 6, placa: 'Carbon', propietario: 12.0107, inicio: 'C', fin: 'H' },
+    { id: 7, placa: 'Nitrogen', propietario: 14.0067, inicio: 'N', fin: 'H' },
+    { id: 8, placa: 'Oxygen', propietario: 15.9994, inicio: 'O', fin: 'H' },
+    { id: 9, placa: 'Fluorine', propietario: 18.9984, inicio: 'F', fin: 'H' },
+    { id: 10, placa: 'Neon', propietario: 20.1797, inicio: 'Ne', fin: 'H' },
   ];
   constructor() {}
 
