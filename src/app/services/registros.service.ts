@@ -15,4 +15,8 @@ export class RegistrosService {
   listarRegistros(): Observable<Registro[]> {
     return this.http.get<Registro[]>(this.API);
   }
+
+  crearRegistro(puesto: Registro): Observable<Registro> {
+    return this.http.post<Registro>(this.API, puesto);
+  }
 }

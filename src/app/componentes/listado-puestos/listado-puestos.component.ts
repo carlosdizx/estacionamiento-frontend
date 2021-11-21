@@ -44,7 +44,7 @@ export class ListadoPuestosComponent implements OnInit {
         actual.getDate() +
         '-' +
         actual.toLocaleTimeString().split(' ')[0];
-      console.log(registro);
+      this.serviceAux.crearRegistro(registro).subscribe();
       puesto.placa = '1';
       puesto.propietario = '';
       this.service.actualizarPuesto(puesto).subscribe();
