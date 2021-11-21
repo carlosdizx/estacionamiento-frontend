@@ -26,6 +26,7 @@ export class ListadoPuestosComponent implements OnInit {
   async actualizarPuesto(puesto: Puesto) {
     if (puesto.placa !== '1') {
       puesto.placa = '1';
+      puesto.propietario = '';
       this.service.actualizarPuesto(puesto).subscribe();
     } else {
       await this.router.navigateByUrl(`/puestos/${puesto.id}`);
