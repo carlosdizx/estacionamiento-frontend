@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Puesto } from 'src/app/services/Puesto';
 import { PuestosService } from '../../services/puestos.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listado-puestos',
@@ -10,7 +11,7 @@ import { PuestosService } from '../../services/puestos.service';
 export class ListadoPuestosComponent implements OnInit {
   puestos: Puesto[] = [];
 
-  constructor(private service: PuestosService) {}
+  constructor(private service: PuestosService, private router: Router) {}
 
   ngOnInit(): void {
     this.listarPuestos();
@@ -22,12 +23,13 @@ export class ListadoPuestosComponent implements OnInit {
       .subscribe((puestos) => (this.puestos = puestos));
   }
 
-  actualizarPuesto(puesto: Puesto): any {
+  async actualizarPuesto(puesto: Puesto) {
     if (puesto.placa !== '1') {
       puesto.placa = '1';
       this.service.actualizarPuesto(puesto).subscribe();
     } else {
       console.log('Registrando');
+      await this.router.navigateByUrl(`/puestos/${puesto.id}`);
     }
   }
 }
