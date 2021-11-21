@@ -13,6 +13,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { EditarPuestoComponent } from './componentes/editar-puesto/editar-puesto.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [AppComponent, ListadoPuestosComponent, ToolbarComponent, EditarPuestoComponent],
@@ -25,6 +27,8 @@ import { EditarPuestoComponent } from './componentes/editar-puesto/editar-puesto
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

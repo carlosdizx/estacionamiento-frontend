@@ -26,7 +26,6 @@ export class EditarPuestoComponent implements OnInit {
   }
 
   habilitarEdicion(): boolean {
-    console.log(this.puesto.placa);
     return this.puesto.placa === '1';
   }
 }
