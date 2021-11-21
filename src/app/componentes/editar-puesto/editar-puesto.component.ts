@@ -52,9 +52,9 @@ export class EditarPuestoComponent implements OnInit {
       actual.toLocaleTimeString().toString().split(' ')[0];
     this.puesto.placa = placa;
     this.puesto.propietario = propietario;
-    this.service
-      .actualizarPuesto(this.puesto)
-      .subscribe((puesto) => (this.puesto = puesto));
-    await this.router.navigateByUrl(`/`);
+    this.service.actualizarPuesto(this.puesto).subscribe((puesto) => {
+      this.puesto = puesto;
+      this.router.navigateByUrl(`/`);
+    });
   }
 }
