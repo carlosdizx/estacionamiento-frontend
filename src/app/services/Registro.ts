@@ -1,5 +1,5 @@
 export class Registro {
-  id!: number;
+  _id!: number;
   inicio!: any;
   fin!: any;
   propietario!: string;

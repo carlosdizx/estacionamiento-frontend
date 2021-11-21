@@ -6,7 +6,7 @@ import { Puesto } from './Puesto';
   providedIn: 'root',
 })
 export class PuestosService {
-  API: string = 'http://127.0.0.1:8000/api/puestos';
+  API: string = 'http://127.0.0.1:3000/puestos';
 
   constructor(private http: HttpClient) {}
 
@@ -15,7 +15,7 @@ export class PuestosService {
   }
 
   actualizarPuesto(puesto: Puesto): Observable<Puesto> {
-    return this.http.put<Puesto>(this.API + `/${puesto.id}`, puesto);
+    return this.http.put<Puesto>(this.API + `/${puesto._id}`, puesto);
   }
 
   encontrarPuesto(id: number): Observable<Puesto> {

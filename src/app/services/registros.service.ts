@@ -8,7 +8,7 @@ import { Registro } from './Registro';
   providedIn: 'root',
 })
 export class RegistrosService {
-  API: string = 'http://127.0.0.1:8000/api/registros';
+  API: string = 'http://127.0.0.1:3000/registros';
 
   constructor(private http: HttpClient) {}
 

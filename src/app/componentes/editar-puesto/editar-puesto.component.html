@@ -8,7 +8,7 @@
         <div class="card" *ngIf="habilitarEdicion()">
           <form [formGroup]="formulario" (ngSubmit)="actualizarPuesto()">
             <div class="card-body">
-              <h2 class="card-title">Puesto #{{ puesto.id }}</h2>
+              <h2 class="card-title">Puesto #{{ puesto._id }}</h2>
               <mat-chip
                 selected
                 [color]="puesto.placa !== '1' ? 'accent' : 'primary'"

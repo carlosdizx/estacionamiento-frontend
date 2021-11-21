@@ -49,7 +49,7 @@ export class ListadoPuestosComponent implements OnInit {
       puesto.propietario = '';
       this.service.actualizarPuesto(puesto).subscribe();
     } else {
-      await this.router.navigateByUrl(`/puestos/${puesto.id}`);
+      await this.router.navigateByUrl(`/puestos/${puesto._id}`);
     }
   }
 }
